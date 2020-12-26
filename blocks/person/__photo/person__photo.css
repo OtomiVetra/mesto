@@ -1,0 +1,14 @@
+.person__photo{
+   width: 120px;
+   border-radius: 50%;
+   grid-column: 1;
+   grid-row: 1/2;
+}
+@media screen and (max-width:670px){
+   .person__photo{
+      grid-row: 1;
+      align-self: center;
+      justify-self: center;
+      margin: 7px 0 0 25px;
+   }
+}

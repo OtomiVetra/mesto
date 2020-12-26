@@ -1,0 +1,22 @@
+.person__edit-button{
+   background: url(../../../images/person__edit-button.svg);
+   background-size: cover;
+   width: 30px;
+   height: 30px;
+   cursor: pointer;
+   align-self: start;
+   margin: 35px 0 40px 18px;
+   padding: 0;
+}
+.person__edit-button:hover{
+   opacity: 0.6;
+}
+@media screen and (max-width:670px){
+   .person__edit-button{
+      grid-row: 2;
+      justify-self: end;
+      width: 20px;
+      height: 20px;
+      margin: 35px 0 0 10px;
+   }
+}

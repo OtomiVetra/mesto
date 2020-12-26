@@ -1,0 +1,22 @@
+.photos__cards{
+   display: grid;
+   grid-template-columns: repeat(3, max-content);
+   row-gap: 20px;
+   column-gap: 17px;
+   padding: 0;
+   margin-top: 0;
+   width: max-content;
+}
+@media screen and (max-width: 900px){
+   .photos__cards{
+      grid-template-columns: repeat(2, max-content);
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 36px;
+   }
+}
+@media screen and (max-width: 610px){
+   .photos__cards{
+      grid-template-columns: max-content;
+   }
+}
