@@ -6,6 +6,10 @@
    grid-row: 1;
    margin: 25px 0 40px 30px;
    align-self: start;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+   max-width: 300px;
 }
 @media screen and (max-width: 670px){
    .person__name{
