@@ -1,11 +1,10 @@
 let openButton = document.querySelector('.person__edit-button');
 let popup = document.querySelector('.popup');
 let closeButton = document.querySelector('.popup__close-button');
-let submitButton = document.querySelector('.popup__submit-button');
 let formElement = document.querySelector('.popup__form');
 
 
-    let togglePopup = function () {
+let togglePopup = function () {
    popup.classList.toggle('popup_opened');
 }
 openButton.addEventListener('click', togglePopup);
@@ -16,11 +15,17 @@ popup.addEventListener('click', function () {
       popup.classList.remove('popup_opened');
    }
 })
-formElement.addEventListener('submit', handleFormSubmit);
 
-function handleFormSubmit (evt) {
+
+
+function handleFormSubmit(evt) {
    evt.preventDefault();
-   document.querySelector('p.person__name').textContent = document.querySelector('.popup__input-text.name').value;
-   document.querySelector('p.person__activity').textContent = document.querySelector('.popup__input-text.title').value;
-   popup.classList.remove('popup_opened')
+   let nameInput = document.querySelector('.name');
+   let jobInput = document.querySelector('.job');
+   let name = document.querySelector('.person__name');
+   let job = document.querySelector('.person__activity');
+   name.textContent = nameInput.value;
+   job.textContent = jobInput.value;
+   popup.classList.remove('popup_opened');
 }
+formElement.addEventListener('submit', handleFormSubmit);
