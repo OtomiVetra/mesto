@@ -4,17 +4,19 @@
    height: 50px;
    border: none;
    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-   margin-bottom: 17px;
+   /* margin-bottom: 17px; */
+   margin-left: auto;
+   margin-right: auto;
    padding: 0;
    font-size: 14px;
    line-height: 17px;
    color: #000000;
 }
 .popup__input-text:last-of-type{
-   margin-bottom: 28px;
+   margin-bottom: 58px;
 }
-.popup__input-text::placeholder{
-   font-size: 14px;
-   line-height: 17px;
-   color: #000000;
+@media screen and (max-width: 450px){
+   .popup__input-text{
+      width: 238px;
+   }
 }

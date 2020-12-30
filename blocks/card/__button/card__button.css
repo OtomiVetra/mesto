@@ -1,5 +1,5 @@
 .card__button{
-   background: url(../../../images/card__button2.svg);
+   background: url(../../../images/card__button3.svg);
    background-size: cover;
    width: 20px;
    height: 18px;
@@ -7,10 +7,12 @@
    padding: 0;
    align-self: center;
    margin-right: 18px;
+   transition: opacity 0.5s;
 }
 .card__button:hover{
    opacity: 0.5;
 }
-.card__button_active{
-   background-color: black;
+.card__button:active{
+   background: url(../../../images/card__button_active.svg);
+   background-size: cover;
 }

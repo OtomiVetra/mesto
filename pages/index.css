@@ -1,6 +1,6 @@
 @import "../vendor/normalize.css";
 @import "../vendor/fonts.css";
-@import "../blocks/basic-cont/basic-cont.css";
+@import "../blocks/body/body.css";
 @import "../blocks/page/page.css";
 @import "../blocks/header/header.css";
 @import "../blocks/header/__logo/header__logo.css";
@@ -20,8 +20,10 @@
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
 @import "../blocks/popup/popup.css";
+@import "../blocks/popup/_opened/popup_opened.css";
 @import "../blocks/popup/__container/popup__container.css";
 @import "../blocks/popup/__title/popup__title.css";
+@import "../blocks/popup/__form/popup__form.css";
 @import "../blocks/popup/__input-text/popup__input-text.css";
 @import "../blocks/popup/__submit-button/popup__submit-button.css";
 @import "../blocks/popup/__close-button/popup__close-button.css";

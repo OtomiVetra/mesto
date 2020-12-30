@@ -1,6 +1,5 @@
 .popup{
    max-width: inherit;
-   max-height: 1200px;
    position: fixed;
    margin-left: auto;
    margin-right: auto;
@@ -11,7 +10,7 @@
    background-color:rgba(0, 0, 0, 0.5);
    display: none;
    justify-content: center;
+   padding-bottom: 690px;
+   padding-top: 195px;
 }
-.popup_opened{
-   display: flex;
-}
+
