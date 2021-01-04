@@ -1,7 +1,9 @@
 .profile__button{
-/*    background: url(../../../images/profile__button.svg); */
+   background: url(../../../images/profile__button3.svg);
    background-color: black;
-   background-size: cover;
+   background-size: 30px 30px;
+   background-repeat: no-repeat;
+   background-position: center;
    color: white;
    font-size: 25px;
    width: 150px;
@@ -21,6 +23,5 @@
    .profile__button{
       width: 90%;
       margin: 0 auto;
-      background-size: 100% 100%;
    }
 }

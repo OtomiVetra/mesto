@@ -8,6 +8,7 @@
    align-self: center;
    margin-right: 18px;
    transition: opacity 0.5s;
+   border: 0;
 }
 .card__button:hover{
    opacity: 0.5;
@@ -15,4 +16,5 @@
 .card__button:active{
    background: url(../../../images/card__button_active.svg);
    background-size: cover;
+   border: 0;
 }

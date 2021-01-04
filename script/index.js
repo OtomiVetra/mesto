@@ -9,18 +9,14 @@ let job = document.querySelector('.person__activity');
 let closePopup = function () {
    popup.classList.remove('popup_opened');
 }
-
-
-openButton.addEventListener('click', function () {
+let openPopup = function () {
    popup.classList.add('popup_opened')
    nameInput.value = name.textContent;
    jobInput.value = job.textContent;
-})
-closeButton.addEventListener('click', function () {
-   closePopup();
-})
+}
 
-
+openButton.addEventListener('click', openPopup);
+closeButton.addEventListener('click', closePopup);
 
 
 function handleFormSubmit(evt) {
