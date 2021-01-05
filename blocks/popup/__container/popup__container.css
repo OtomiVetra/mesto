@@ -6,7 +6,6 @@
    flex-direction: column;
    justify-content: space-around;
    position: relative;
-   margin-top: 195px;
 }
 @media screen and (max-width: 550px){
    .popup__container{
