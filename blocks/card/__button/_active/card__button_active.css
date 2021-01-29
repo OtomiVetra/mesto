@@ -1,0 +1,12 @@
+.card__button_active{
+   background: url(../../../../images/card__button_active.svg);
+   background-size: cover;
+   width: 20px;
+   height: 18px;
+   cursor: pointer;
+   padding: 0;
+   align-self: center;
+   margin-right: 18px;
+   transition: opacity 0.5s;
+   border: 0;
+}

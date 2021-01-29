@@ -1,4 +1,4 @@
-.popup{
+.popup-added{
    max-width: inherit;
    position: fixed;
    margin-left: auto;
@@ -15,4 +15,3 @@
    opacity: 0;
    transition: visibility .4s linear, opacity .4s linear;
 }
-

@@ -17,6 +17,8 @@
 @import "../blocks/card/__info/card__info.css";
 @import "../blocks/card/__title/card__title.css";
 @import "../blocks/card/__button/card__button.css";
+@import "../blocks/card/__button/_active/card__button_active.css";
+@import "../blocks/card/__delete-button/card__delete-button.css";
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
 @import "../blocks/popup/popup.css";
@@ -27,3 +29,25 @@
 @import "../blocks/popup/__input-text/popup__input-text.css";
 @import "../blocks/popup/__submit-button/popup__submit-button.css";
 @import "../blocks/popup/__close-button/popup__close-button.css";
+@import "../blocks/popup-added/popup-added.css";
+@import "../blocks/popup-added/__container/popup-added__container.css";
+@import "../blocks/popup-added/__title/popup-added__title.css";
+@import "../blocks/popup-added/__form/popup-added__form.css";
+@import "../blocks/popup-added/__input-text/popup-added__input-text.css";
+@import "../blocks/popup-added/__submit-button/popup-added__submit-button.css";
+@import "../blocks/popup-added/__close-button/popup-added__close-button.css";
+@import "../blocks/popup-added/_opened/popup-added_opened.css";
+@import "../blocks/popup-image/popup-image.css";
+@import "../blocks/popup-image/__container/popup-image__container.css";
+@import "../blocks/popup-image/__image/popup-image__image.css";
+@import "../blocks/popup-image/__text/popup-image__text.css";
+@import "../blocks/popup-image/__close-button/popup-image__close-button.css";
+@import "../blocks/popup-image/_opened/popup-image_opened.css";
+
+
+
+
+
+
+
+
