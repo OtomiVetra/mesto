@@ -92,7 +92,7 @@ function handleFormSubmit(evt) {
    evt.preventDefault();
    name.textContent = nameInput.value;
    job.textContent = jobInput.value;
-   closePopup();
+   closePopup(profilePopup);
 }
 formElement.addEventListener('submit', handleFormSubmit);
 //4ая проектная
@@ -122,13 +122,12 @@ function createCard(item) {
 
 //добавление новой карточки с инфой из формы
 function addition(evt) {
-   let item = {
+   const item = {
       name: cardNameInput.value,
       link: cardLinkInput.value
    }
    evt.preventDefault();
-   renderItem(item);
-   createCard(item);
+   list.prepend(createCard(item));
    closePopupAdded();
 }
 //реализация лайка
