@@ -42,37 +42,35 @@
       <footer class="footer">
          <p class="footer__copyright">© 2020 Mesto Russia</p>
       </footer>
-      <section class="popup">
+      <section class="popup profile-popup">
          <div class="popup__container">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="popup">
+            <form class="popup__form profile-popup__form" name="popup">
                <input class="popup__input-text popup__input-text_type_name" type="text" value=" Жак-Ив Кусто"
                   name="name">
                <input class="popup__input-text popup__input-text_type_job" type="text" value=" Исследователь океана"
                   name="job">
                <button type="submit" value="Сохранить" class="popup__submit-button">Сохранить</button>
             </form>
-            <button type="button" class="popup__close-button"></button>
+            <button type="button" class="popup__close-button profile-popup__close-button"></button>
          </div>
       </section>
-      <section class="popup-added">
-         <div class="popup-added__container">
-            <h2 class="popup-added__title">Новое место</h2>
-            <form class="popup-added__form" name="popup-added">
-               <input type="text" class="popup-added__input-text popup-added__input-text_type_name"
-                  placeholder="Название">
-               <input type="text" class="popup-added__input-text popup-added__input-text_type_link"
-                  placeholder="Ссылка на картинку">
-               <button class="popup-added__submit-button" type="submit" value="Создать">Создать</button>
+      <section class="popup add_card-popup">
+         <div class="popup__container">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form add_card-popup-form" name="add_card-popup-form">
+               <input type="text" class="popup__input-text add_card-popup_input-name" placeholder="Название">
+               <input type="text" class="popup__input-text add_card-popup_input-link" placeholder="Ссылка на картинку">
+               <button class="popup__submit-button" type="submit" value="Создать">Создать</button>
             </form>
-            <button type="button" class="popup-added__close-button"></button>
+            <button type="button" class="popup__close-button add_card-popup_close-button"></button>
          </div>
       </section>
-      <section class="popup-image">
+      <section class="popup popup-image">
          <figure class="popup-image__container">
             <img class="popup-image__image" src="#" alt="фото места">
             <figcaption class="popup-image__text">Байкал</figcaption>
-            <button type="button" class="popup-image__close-button"></button>
+            <button type="button" class="popup__close-button popup-image__close-button"></button>
          </figure>
       </section>
    </div>
