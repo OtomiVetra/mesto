@@ -8,12 +8,12 @@ const nameInput = document.querySelector('.popup__input-text_type_name');
 const jobInput = document.querySelector('.popup__input-text_type_job');
 const name = document.querySelector('.person__name');
 const job = document.querySelector('.person__activity');
-const cardNameInput = document.querySelector('.add_card-popup_input-name');
-const cardLinkInput = document.querySelector('.add_card-popup_input-link');
+const cardNameInput = document.querySelector('.popup-add-card_input-name');
+const cardLinkInput = document.querySelector('.popup-add-card_input-link');
 //переменные открытия и закрытия попапа добавления картинки
-const popupAdded = document.querySelector('.add_card-popup');
+const popupAdded = document.querySelector('.popup-add-card');
 const openButtonAdded = document.querySelector('.profile__button');
-const closeButtonAdded = document.querySelector('.add_card-popup_close-button');
+const closeButtonAdded = document.querySelector('.popup-add-card_close-button');
 //массив с изначальными карточками
 const initialCards = [
    {
@@ -43,7 +43,7 @@ const initialCards = [
 ];
 const userTemplate = document.querySelector('.item_template').content;// template элемент
 const list = document.querySelector('.photos__cards');// список куда вставляем элемент
-const formAddedElement = document.querySelector('.add_card-popup-form')// форма добавления
+const formAddedElement = document.querySelector('.popup-add-card_form')// форма добавления
 //переменные для открытия картинки на весь экран
 const popupImage = document.querySelector('.popup-image');
 const picture = document.querySelector('.popup-image__image');
