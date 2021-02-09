@@ -55,40 +55,38 @@
                   <span class="popup__form-error job-input-error"></span>
                   <button type="submit" value="Сохранить" class="popup__submit-button">Сохранить</button>
                </div>
+            </form>
+            <button type="button" class="popup__close-button profile-popup__close-button"></button>
          </div>
-         </form>
-         <button type="button" class="popup__close-button profile-popup__close-button"></button>
-   </div>
-   </section>
-   <section class="popup popup-add-card">
-      <div class="popup__container">
-         <h2 class="popup__title">Новое место</h2>
-         <form class="popup__form popup-add-card__form" name="popup-add-card__form" novalidate>
+      </section>
+      <section class="popup popup-add-card">
+         <div class="popup__container">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup-add-card__form" name="popup-add-card__form" novalidate>
 
-            <div class="form__set">
-               <input id="title-input" type="text" class="popup__input-text popup-add-card__input-name"
-                  placeholder="Название" minlength="2" maxlength="30" required>
-               <span class="popup__form-error title-input-error"></span>
-               <input id="url-input" type="url" class="popup__input-text popup-add-card__input-link"
-                  placeholder="Ссылка на картинку" required>
-               <span class="popup__form-error url-input-error"></span>
+               <div class="form__set">
+                  <input id="title-input" type="text" class="popup__input-text popup-add-card__input-name"
+                     placeholder="Название" minlength="2" maxlength="30" required>
+                  <span class="popup__form-error title-input-error"></span>
+                  <input id="url-input" type="url" class="popup__input-text popup-add-card__input-link"
+                     placeholder="Ссылка на картинку" required>
+                  <span class="popup__form-error url-input-error"></span>
 
-               <button class="popup__submit-button" type="submit" value="Создать">Создать</button>
-            </div>
-         </form>
-         <button type="button" class="popup__close-button popup-add-card__close-button"></button>
-      </div>
-   </section>
-   <section class="popup popup-image">
-      <figure class="popup-image__container">
-         <img class="popup-image__image" src="#" alt="фото места">
-         <figcaption class="popup-image__text">Байкал</figcaption>
-         <button type="button" class="popup__close-button popup-image__close-button"></button>
-      </figure>
-   </section>
-   </div>
-   <script src="./script/index.js"></script>
-   <script src="./script/validate.js"></script>
+                  <button class="popup__submit-button" type="submit" value="Создать">Создать</button>
+               </div>
+            </form>
+            <button type="button" class="popup__close-button popup-add-card__close-button"></button>
+         </div>
+      </section>
+      <section class="popup popup-image">
+         <figure class="popup-image__container">
+            <img class="popup-image__image" src="#" alt="фото места">
+            <figcaption class="popup-image__text">Байкал</figcaption>
+            <button type="button" class="popup__close-button popup-image__close-button"></button>
+         </figure>
+      </section>
+      <script src="./script/index.js"></script>
+      <script src="./script/validate.js"></script>
 </body>
 
 </html>
