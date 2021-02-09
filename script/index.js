@@ -52,14 +52,18 @@ const imageCloseButton = document.querySelector('.popup-image__close-button');
 //универсальные функции открытия и закрытия
 function closePopup(item) {
    item.classList.remove('popup_opened');
+   document.removeEventListener('keydown', closePopupEsc);
 }
 function openPopup(item) {
    item.classList.add('popup_opened');
-   document.addEventListener('keydown', function closePopupEsc(evt) {
-      if (evt.key === 'Escape') {
-         closePopup(item)
-      }
-   });
+   document.addEventListener('keydown', closePopupEsc);
+}
+//функция закрытия попапа на esc
+function closePopupEsc(evt) {
+   if (evt.key === 'Escape') {
+      const openedPopup = document.querySelector('.popup_opened');
+      closePopup(openedPopup);
+   }
 }
 const closeProfilePopup = function () {
    closePopup(profilePopup)
@@ -84,16 +88,23 @@ function zoom(element) {
    picture.src = element.link;
    imageTitle.textContent = element.name;
 }
+
+function closePopupOverlay(evt) {
+   if (evt.target === evt.currentTarget) {
+      closePopup(evt.target)
+   }
+}
+
+
+
+
 // закртие попапа увеличенной картинки
 const closePopupImage = function () {
    closePopup(popupImage);
 }
 openButton.addEventListener('click', openProfilePopup);
 closeButton.addEventListener('click', closeProfilePopup);
-popup.addEventListener('click', (evt) => {
-   if (evt.target === popup)
-      closeProfilePopup()
-});
+popup.addEventListener('click', closePopupOverlay);
 
 
 function handleFormSubmit(evt) {
@@ -152,17 +163,9 @@ function handleDelete(evt) {
 formAddedElement.addEventListener('submit', addition);
 openButtonAdded.addEventListener('click', openPopupAdded);
 closeButtonAdded.addEventListener('click', closePopupAdded);
-popupAdded.addEventListener('click', (evt) => {
-   if (evt.target === popupAdded) {
-      closePopupAdded()
-   }
-});
+popupAdded.addEventListener('click', closePopupOverlay);
 imageCloseButton.addEventListener('click', closePopupImage);
-popupImage.addEventListener('click', (evt) => {
-   if (evt.target === popupImage) {
-      closePopupImage()
-   }
-});
+popupImage.addEventListener('click', closePopupOverlay);
 
 
 render()
