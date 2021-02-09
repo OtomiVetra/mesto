@@ -1,7 +1,6 @@
 const openButton = document.querySelector('.person__edit-button');
 const popup = document.querySelector('.popup');
 const profilePopup = document.querySelector('.profile-popup');
-console.log(profilePopup);
 const closeButton = document.querySelector('.profile-popup__close-button');
 const formElement = document.querySelector('.profile-popup__form');
 const nameInput = document.querySelector('.popup__input-text_type_name');
@@ -56,6 +55,11 @@ function closePopup(item) {
 }
 function openPopup(item) {
    item.classList.add('popup_opened');
+   document.addEventListener('keydown', function closePopupEsc(evt) {
+      if (evt.key === 'Escape') {
+         closePopup(item)
+      }
+   });
 }
 const closeProfilePopup = function () {
    closePopup(profilePopup)
@@ -86,6 +90,10 @@ const closePopupImage = function () {
 }
 openButton.addEventListener('click', openProfilePopup);
 closeButton.addEventListener('click', closeProfilePopup);
+popup.addEventListener('click', (evt) => {
+   if (evt.target === popup)
+      closeProfilePopup()
+});
 
 
 function handleFormSubmit(evt) {
@@ -144,7 +152,18 @@ function handleDelete(evt) {
 formAddedElement.addEventListener('submit', addition);
 openButtonAdded.addEventListener('click', openPopupAdded);
 closeButtonAdded.addEventListener('click', closePopupAdded);
+popupAdded.addEventListener('click', (evt) => {
+   if (evt.target === popupAdded) {
+      closePopupAdded()
+   }
+});
 imageCloseButton.addEventListener('click', closePopupImage);
+popupImage.addEventListener('click', (evt) => {
+   if (evt.target === popupImage) {
+      closePopupImage()
+   }
+});
+
 
 render()
 
