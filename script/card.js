@@ -1,37 +1,5 @@
-const initialCards = [
-   {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-   },
-   {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-   },
-   {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-   },
-   {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-   },
-   {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-   },
-   {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-   }
-];
-
-const popupImage = document.querySelector('.popup-image');
-const picture = document.querySelector('.popup-image__image');
-const imageTitle = document.querySelector('.popup-image__text');
-const imageCloseButton = document.querySelector('.popup-image__close-button');
-
-
-class Card {
+import { openPopup } from './utils/utils.js';
+export class Card {
    constructor(data, cardSelector) {
       this._link = data.link;
       this._name = data.name;
@@ -50,30 +18,26 @@ class Card {
       this._element.querySelector('.card__title').textContent = this._name;
       return this._element;
    }
-   _handleOpenPopup() {
-      picture.src = this._image;
-      popupImage.classList.add('popup_opened');
-   }
-   _handleClosePopup() {
-      picture.src = '';
-      popupImage.classList.remove('popup_opened');
-   }
    _like() {
-      function like(evt) {
-         evt.target.classList.toggle('card__button_active');
-      }
+      this.likeButton.classList.toggle('card__button_active');
+   }
+   _delete() {
+      const del = document.querySelector('.card').remove();
+   }
+   _zoom() {
+      const popupImage = document.querySelector('.popup-image');
+      openPopup(popupImage);
+      const picture = document.querySelector('.popup-image__image');
+      const imageTitle = document.querySelector('.popup-image__text');
+      picture.src = this._link;
+      imageTitle.textContent = this._name;
    }
    _setEventListeners() {
-      this._element.addEventListener('click', () => {
-         this._handleOpenPopup();
-      });
-      imageCloseButton.addEventListener('click', () => {
-         this._handleClosePopup();
-      })
-   }
-}
-initialCards.forEach((item) => {
-   const card = new Card(item, '.item_template');
-   const cardElement = card.generateCard();
-   document.querySelector('.photos__cards').append(cardElement);
-});
+      this.deleteButton = this._element.querySelector('.card__delete-button');
+      this.deleteButton.addEventListener('click', () => this._delete());
+      this.likeButton = this._element.querySelector('.card__button');
+      this.likeButton.addEventListener('click', () => this._like());
+      this.preview = this._element.querySelector('.card__image');
+      this.preview.addEventListener('click', () => this._zoom());
+   };
+};
