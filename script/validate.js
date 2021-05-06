@@ -1,7 +1,9 @@
 export class FormValidator {
-   constructor(validatorConfig, form) {
+   constructor(validatorConfig, form, inputs, button) {
       this.validatorConfig = validatorConfig;
       this.form = form;
+      this.inputs = Array.from(this.form.querySelectorAll(this.validatorConfig.inputSelector));
+      this.button = this.form.querySelector(this.validatorConfig.submitButtonSelector);
    }
    preventFormSubmit(e) {
       e.preventDefault();
@@ -13,12 +15,10 @@ export class FormValidator {
       })
    }
    _setInputListener() {
-      const inputs = Array.from(this.form.querySelectorAll(this.validatorConfig.inputSelector));
-      const button = this.form.querySelector(this.validatorConfig.submitButtonSelector);
-      inputs.forEach(input => {
+      this.inputs.forEach(input => {
          input.addEventListener('input', () => {
             this._checkInputValidity(input);
-            this._toggleButtonState(inputs, button);
+            this._toggleButtonState(this.inputs, this.button);
          })
       })
    }
@@ -36,9 +36,10 @@ export class FormValidator {
       inputs.forEach(input => {
          this._hideInputError(input);
       })
-      const activeButtonPopup = this.form.querySelector(this.validatorConfig.submitButtonSelector);
+      /* const activeButtonPopup = this.form.querySelector(this.validatorConfig.submitButtonSelector);
       activeButtonPopup.classList.add(this.validatorConfig.inactiveButtonClass);
-      activeButtonPopup.disabled = true;
+      activeButtonPopup.disabled = true; */
+      this._toggleButtonState(this.inputs, this.button);
    }
    _hasInvalidInput(inputs) {
       return inputs.every(input => input.validity.valid);

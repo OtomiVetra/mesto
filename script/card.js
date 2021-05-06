@@ -8,6 +8,7 @@ export class Card {
    _getTemplate() {
       const cardElement = document.querySelector(this._cardSelector)
          .content
+         .querySelector('.card')
          .cloneNode(true);
       return cardElement;
    }
@@ -22,7 +23,7 @@ export class Card {
       this.likeButton.classList.toggle('card__button_active');
    }
    _delete() {
-      const del = document.querySelector('.card').remove();
+      const del = this._element.remove();
    }
    _zoom() {
       const popupImage = document.querySelector('.popup-image');
