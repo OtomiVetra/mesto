@@ -4,22 +4,21 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./pages/index.css">
    <title>Mesto</title>
 </head>
 
 <body class="body">
    <div class="page">
       <header class="header">
-         <img src="./images/logo.svg" alt="здесь был логотип всего мероприятия" class="header__logo">
+         <img src="<%=require('./images/logo.svg')%>" alt="Логотип" class="header__logo">
       </header>
       <main class="content">
          <section class="profile">
             <div class="person">
-               <img src="./images/person__photo.jpg" alt="фотокарточка нашего героя" class="person__photo">
+               <img src="<%=require('./images/person__photo.jpg')%>" alt="фотокарточка нашего героя"
+                  class="person__photo">
                <h1 class="person__name">Жак-Ив Кусто</h1>
                <p class="person__activity">Исследователь океана</p>
-
                <button class="person__edit-button" type="button"></button>
             </div>
             <button class="profile__button" type="button"></button>
@@ -79,7 +78,6 @@
             <button type="button" class="popup__close-button popup-image__close-button"></button>
          </figure>
       </section>
-      <script type="module" src="./script/index.js"></script>
    </div>
 </body>
 
