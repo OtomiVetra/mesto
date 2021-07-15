@@ -1,4 +1,4 @@
-import { openPopup } from './utils/utils.js';
+import { openPopup } from '../utils/utils.js';
 export class Card {
    constructor(data, cardSelector) {
       this._link = data.link;
