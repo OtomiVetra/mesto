@@ -1,6 +1,8 @@
 export default class Popup {
    constructor(selector) {
       this._popupEl = document.querySelector(selector);
+      this.close = this.close.bind(this);
+      this._closePopupOverlay = this._closePopupOverlay.bind(this);
    }
    open() {
       this._popupEl.classList.add('popup_opened');
@@ -21,6 +23,7 @@ export default class Popup {
       }
    }
    setEventListeners() {
-      this._popupEl.addEventListener('click', this._closePopupOverlay());
+      this._popupEl.addEventListener('click', this._closePopupOverlay);
+      // @todo: добавить обработчик close
    }
 }
