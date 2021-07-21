@@ -3,15 +3,15 @@ export default class Section {
       this._container = document.querySelector(selector);
       this._items = items;
       this._renderer = renderer;
+      this.addItem = this.addItem.bind(this);
+      this.render();
    }
 
-   addItem(itemEl) {
-      this._container.append(itemEL);
+   addItem(item) {
+      this._renderer(item, this._container)
    }
 
    render() {
-      this._items.forEach((item) => {
-         this._renderer(item);
-      });
+      this._items.forEach(this.addItem);
    }
 }
