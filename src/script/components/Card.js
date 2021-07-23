@@ -16,6 +16,7 @@ export class Card {
       this._element = this._getTemplate();
       this._setEventListeners();
       this._element.querySelector('.card__image').src = this._link;
+      this._element.querySelector('.card__image').alt = this._name;
       this._element.querySelector('.card__title').textContent = this._name;
       return this._element;
    }
@@ -23,7 +24,7 @@ export class Card {
       this.likeButton.classList.toggle('card__button_active');
    }
    _delete() {
-      const del = this._element.remove();
+      this._element.remove();
    }
    _setEventListeners() {
       this.deleteButton = this._element.querySelector('.card__delete-button');
