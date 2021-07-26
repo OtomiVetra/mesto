@@ -21,14 +21,14 @@ const validator = new FormValidator(validatorConfig, popupWithProfile.formEl);
 popupWithProfile.setEventListeners(validator);
 
 const section = new Section({
-   items: initialCards,
+   data: initialCards,
    renderer: (item) => {
       const card = new Card(item, '.item_template', popupWhithImage.open);
       const cardElement = card.generateCard();
       return cardElement;
    }
 }, ".photos__cards");
-section.renderCards();
+section.renderItems();
 const popupWithCard = new PopupWithForm('.popup-add-card', section.addItem);
 const cardValidator = new FormValidator(validatorConfig, popupWithCard.formEl);
 
