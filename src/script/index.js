@@ -20,16 +20,18 @@ const popupWithProfile = new PopupWithForm('.profile-popup', userInfo.setUserInf
 const validator = new FormValidator(validatorConfig, popupWithProfile.formEl);
 popupWithProfile.setEventListeners(validator);
 
+const cardRenderer = (item) => {
+   const card = new Card(item, '.item_template', popupWhithImage.open);
+   const cardElement = card.generateCard();
+   section.addItem(cardElement);
+};
+
 const section = new Section({
-   data: initialCards,
-   renderer: (item) => {
-      const card = new Card(item, '.item_template', popupWhithImage.open);
-      const cardElement = card.generateCard();
-      return cardElement;
-   }
+   items: initialCards,
+   renderer: cardRenderer
 }, ".photos__cards");
-section.renderItems();
-const popupWithCard = new PopupWithForm('.popup-add-card', section.addItem);
+section.renderCards();
+const popupWithCard = new PopupWithForm('.popup-add-card', cardRenderer);
 const cardValidator = new FormValidator(validatorConfig, popupWithCard.formEl);
 
 popupWithCard.setEventListeners(cardValidator);
