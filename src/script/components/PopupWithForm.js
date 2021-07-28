@@ -15,11 +15,8 @@ export default class PopupWithForm extends Popup {
       }
       return data;
    }
-   setEventListeners(validator) {
+   setEventListeners() {
       super.setEventListeners();
-      this._validator = validator;
-      this._validator.enableValidation();
-      this._validator.resetFormState();
       this.formEl.addEventListener('submit', (e) => {
          e.preventDefault();
          this._handleSubmit(this._getInputValues(), this.formEl);
@@ -29,7 +26,6 @@ export default class PopupWithForm extends Popup {
    close() {
       super.close();
       this.formEl.reset()
-      this._validator.resetFormState();
    }
 }
 

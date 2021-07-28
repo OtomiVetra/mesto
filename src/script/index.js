@@ -18,7 +18,12 @@ popupWhithImage.setEventListeners();
 const userInfo = new UserInfo('.person__name', '.person__activity');
 const popupWithProfile = new PopupWithForm('.profile-popup', userInfo.setUserInfo);
 const validator = new FormValidator(validatorConfig, popupWithProfile.formEl);
-popupWithProfile.setEventListeners(validator);
+validator.enableValidation();
+popupWithProfile.setEventListeners();
+openButton.addEventListener('click', () => {
+   validator.resetFormState();
+   popupWithProfile.open();
+});
 
 const cardRenderer = (item) => {
    const card = new Card(item, '.item_template', popupWhithImage.open);
@@ -33,8 +38,9 @@ const section = new Section({
 section.renderCards();
 const popupWithCard = new PopupWithForm('.popup-add-card', cardRenderer);
 const cardValidator = new FormValidator(validatorConfig, popupWithCard.formEl);
-
-popupWithCard.setEventListeners(cardValidator);
-
-openButtonAdded.addEventListener('click', popupWithCard.open);
-openButton.addEventListener('click', popupWithProfile.open);
+cardValidator.enableValidation();
+popupWithCard.setEventListeners();
+openButtonAdded.addEventListener('click', () => {
+   cardValidator.resetFormState();
+   popupWithCard.open();
+});
