@@ -1,8 +1,9 @@
 const path = require('path');
+require("dotenv").config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const PORT = process.env.PORT || 8080;
 module.exports = {
    entry: {
       main: './src/script/index.js'
@@ -18,7 +19,7 @@ module.exports = {
       contentBase: path.resolve(__dirname, './dist'),
       open: true,
       compress: true,
-      port: 8080
+      port: PORT
    },
    module: {
       rules: [{
