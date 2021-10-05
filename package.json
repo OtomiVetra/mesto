@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
-    "start": "webpack serve --port $PORT"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
