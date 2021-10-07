@@ -25,4 +25,4 @@
  ```
 
 
-а также[Ссылка на проект](http://mesto1.herokuapp.com/)
+а также [Ссылка на проект](http://mesto1.herokuapp.com/)
